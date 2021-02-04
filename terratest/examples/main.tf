@@ -1,8 +1,3 @@
-terraform {
-  # This module is now only being tested with Terraform 0.13.x
-  required_version = "~> 0.13.0"
-}
-
 provider "aws" {
   region  = "eu-west-1"
   version = "~> 2.28"
@@ -23,7 +18,6 @@ resource "aws_secretsmanager_secret_version" "db_password" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.44.0"
 
   name               = "mlflow-${random_id.id.hex}"
   cidr               = "10.0.0.0/16"
