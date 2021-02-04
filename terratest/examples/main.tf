@@ -1,3 +1,8 @@
+terraform {
+  # This module is now only being tested with Terraform 0.13.x
+  required_version = "~> 0.13"
+}
+
 provider "aws" {
   region  = "eu-west-1"
   version = "~> 2.28"
