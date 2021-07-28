@@ -84,4 +84,10 @@ resource "aws_rds_cluster" "backend_store" {
     seconds_until_auto_pause = var.database_seconds_until_auto_pause
     timeout_action           = "ForceApplyCapacityChange"
   }
+
+  lifecycle {
+    ignore_changes = [
+      availability_zones,
+    ]
+  }
 }
